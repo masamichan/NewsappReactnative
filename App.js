@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import ListItem from './components/ListItem';
+import articles from './dummies/article';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,25 +35,15 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.itemContainer}>
-        <View style={styles.leftContainer}>
-          <Image
-            style={{ width: 100, height: 100 }}
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-          />
-        </View>
-        <View style={styles.rightContainer}>
-          <Text numberOfLines={3} style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna
-          </Text>
-          <Text style={styles.subText}>まーくん</Text>
-        </View>
-      </View>
-    </View>
-  );
+  const items = articles.map((article, index) => {
+    return (
+      <ListItem
+        imageUrl={article.urlToImage}
+        title={article.title}
+        author={article.author}
+        key={index}
+      />
+    );
+  });
+  return <View style={styles.container}>{items}</View>;
 }
