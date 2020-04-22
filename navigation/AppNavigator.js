@@ -6,7 +6,7 @@ import ArticleScreen from '../screens/ArticleScreen';
 
 const Stack = createStackNavigator();
 
-export default AppNvigator = () => {
+export default AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
