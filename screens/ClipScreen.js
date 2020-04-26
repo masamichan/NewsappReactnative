@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, FlatList } from 'react-native';
 import ListItem from '../components/ListItem';
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -15,9 +15,9 @@ export default ClipScreen = ({ navigation }) => {
   const { clips } = user;
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <FlatList
-        data={clips}
+        data={user.clips}
         renderItem={({ item }) => (
           <ListItem
             imageUrl={item.urlToImage}
