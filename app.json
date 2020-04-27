@@ -16,7 +16,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.masamichan.news-app",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.masamichan.newsapp"
     },
     "extra": {
       "newsApiKey": "1359251d78684dc4ad13595a5c9ecc47"
